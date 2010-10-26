@@ -23,19 +23,19 @@ end
 if should_load
 	disp(sprintf('Loading PCs (k = %d)...', k));
 
-	load(sprintf('data/%s/pgp.mat', edge_method));
+	load(sprintf('data/%s/pgp.mat', current_set));
 	Pgpx = Pgp(:,1:k);
 	clear Pgp Vgp;
 	
-	load(sprintf('data/%s/pep.mat', edge_method));
+	load(sprintf('data/%s/pep.mat', current_set));
 	Pepx = Pep(:,1:k);
 	clear Pep Vep;
 	
-	load(sprintf('data/%s/pgn.mat', edge_method));
+	load(sprintf('data/%s/pgn.mat', current_set));
 	Pgnx = Pgn(:,1:k);
 	clear Pgn Vgn;
 	
-	load(sprintf('data/%s/pen.mat', edge_method));
+	load(sprintf('data/%s/pen.mat', current_set));
 	Penx = Pen(:,1:k);
 	clear Pen Ven;
 end

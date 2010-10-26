@@ -3,11 +3,11 @@
 load_paths;
 load_pcs;
 
-pedpaths = dir_filenames('data/samples/train/pedestrians', '\.jpg', true);
-nonpaths = dir_filenames('data/samples/train/nonpedestrians', '\.jpg', true);
+pedpaths = dir_filenames(sprintf('data/%s/train/pedestrians', current_set), '\.jpg', true);
+nonpaths = dir_filenames(sprintf('data/%s/train/nonpedestrians', current_set), '\.jpg', true);
 
 srcpaths = [pedpaths nonpaths];
-dstpath = sprintf('data/%s/reconstructions', edge_method);
+dstpath = sprintf('data/%s/reconstructions', current_set);
 dstpathfmt = '%s/k=%d/%s/%s_%s.%s'; % dstpath, k, folder, filename, rectype, extension
 
 for i = 1:size(srcpaths,2)

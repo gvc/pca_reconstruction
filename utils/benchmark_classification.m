@@ -3,8 +3,8 @@
 load_paths;
 load_pcs;
 
-pedpaths = dir_filenames('data/samples/train/pedestrians', '\.jpg', true);
-nonpaths = dir_filenames('data/samples/train/nonpedestrians', '\.jpg', true);
+pedpaths = dir_filenames(sprintf('data/%s/train/pedestrians', current_set), '\.jpg', true);
+nonpaths = dir_filenames(sprintf('data/%s/train/nonpedestrians', current_set), '\.jpg', true);
 
 paths = [pedpaths nonpaths];
 expected = [ones(size(pedpaths,2),1) ; zeros(size(nonpaths,2),1)];

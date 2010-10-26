@@ -38,6 +38,6 @@ clear i s;
 
 [~,~,~,~,groups,~,~] = regexp(image_path, '([A-Za-z0-9-]+)\.\w{3}');
 image_name = groups{1}{1};
-save(sprintf('data/%s/captures/%s.mat', edge_method, image_name), 'errors_scales', 'windows_scales');
+save(sprintf('data/%s/captures/%s.mat', current_set, image_name), 'errors_scales', 'windows_scales');
 
 clear image image_name groups;

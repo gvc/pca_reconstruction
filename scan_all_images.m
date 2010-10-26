@@ -1,4 +1,4 @@
-image_paths = dir_filenames(sprintf('data/%s/detect', edge_method), '\.jpg$', true);
+image_paths = dir_filenames(sprintf('data/%s/detect', current_set), '\.jpg$', true);
 
 for i = 1:numel(image_paths)
 	tic;

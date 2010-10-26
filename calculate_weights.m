@@ -18,4 +18,4 @@ weights
 clear array_weights;
 
 disp('Saving weights...');
-save(sprintf('data/%s/weights_%d.mat', edge_method, k), 'weights');
+save(sprintf('data/%s/weights_%d.mat', current_set, k), 'weights');
