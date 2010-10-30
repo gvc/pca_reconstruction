@@ -60,5 +60,3 @@ if not(exist('weights', 'var'))
 	weights.pgn = 1;
 	weights.pen = 1;
 end
-
-clear should_load;

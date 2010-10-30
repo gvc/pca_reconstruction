@@ -4,4 +4,4 @@ addpath('utils');
 
 current_set = 'Set #1';
 
-disp sprintf('Using: ', current_set);
+disp(sprintf('Using: %s', current_set));

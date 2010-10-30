@@ -9,7 +9,7 @@ load_train_pedestrians;
 disp 'HEAD'
 
 disp 'Computing pedestrians grayscale mean...'
-mngpH = mean(heads,2);
+mngHp = mean(heads,2);
 
 disp 'Computing pedestrians grayscale PCA...'
 [PgHp,VgHp] = pca(heads);
@@ -17,12 +17,12 @@ disp 'Computing pedestrians grayscale PCA...'
 disp 'Saving pedestrians grayscale PCAs...'
 PgHp = PgHp(:,1:numpcs);
 VgHp = VgHp(1:numpcs);
-save(sprintf('data/%s/pgHp.mat', current_set), 'PgHp', 'VgHp', 'mngpH');
+save(sprintf('data/%s/pgHp.mat', current_set), 'PgHp', 'VgHp', 'mngHp');
 
 disp 'Clearing workspace...'
 clear PgHp;
 clear VgHp;
-clear mngpH;
+clear mngHp;
 
 disp 'Computing pedestrians edge mean...'
 mneHp = mean(head_edges,2);
@@ -45,7 +45,7 @@ clear mneHp;
 disp 'TORSO'
 
 disp 'Computing pedestrians grayscale mean...'
-mngpT = mean(torsos,2);
+mngTp = mean(torsos,2);
 
 disp 'Computing pedestrians grayscale PCA...'
 [PgTp,VgTp] = pca(torsos);
@@ -53,12 +53,12 @@ disp 'Computing pedestrians grayscale PCA...'
 disp 'Saving pedestrians grayscale PCAs...'
 PgTp = PgTp(:,1:numpcs);
 VgTp = VgTp(1:numpcs);
-save(sprintf('data/%s/pgTp.mat', current_set), 'PgTp', 'VgTp', 'mngpT');
+save(sprintf('data/%s/pgTp.mat', current_set), 'PgTp', 'VgTp', 'mngTp');
 
 disp 'Clearing workspace...'
 clear PgTp;
 clear VgTp;
-clear mngpT;
+clear mngTp;
 
 disp 'Computing pedestrians edge mean...'
 mneTp = mean(torso_edges,2);
@@ -81,7 +81,7 @@ clear mneTp;
 disp 'LEGS'
 
 disp 'Computing pedestrians grayscale mean...'
-mngpL = mean(legs,2);
+mngLp = mean(legs,2);
 
 disp 'Computing pedestrians grayscale PCA...'
 [PgLp,VgLp] = pca(legs);
@@ -89,12 +89,12 @@ disp 'Computing pedestrians grayscale PCA...'
 disp 'Saving pedestrians grayscale PCAs...'
 PgLp = PgLp(:,1:numpcs);
 VgLp = VgLp(1:numpcs);
-save(sprintf('data/%s/pgLp.mat', current_set), 'PgLp', 'VgLp', 'mngpL');
+save(sprintf('data/%s/pgLp.mat', current_set), 'PgLp', 'VgLp', 'mngLp');
 
 disp 'Clearing workspace...'
 clear PgLp;
 clear VgLp;
-clear mngpL;
+clear mngLp;
 
 disp 'Computing pedestrians edge mean...'
 mneLp = mean(leg_edges,2);
@@ -121,7 +121,7 @@ load_train_nonpedestrians;
 disp 'HEAD'
 
 disp 'Computing pedestrians grayscale mean...'
-mngnH = mean(nonheads,2);
+mngHn = mean(nonheads,2);
 
 disp 'Computing pedestrians grayscale PCA...'
 [PgHn,VgHn] = pca(nonheads);
@@ -129,12 +129,12 @@ disp 'Computing pedestrians grayscale PCA...'
 disp 'Saving pedestrians grayscale PCAs...'
 PgHn = PgHn(:,1:numpcs);
 VgHn = VgHn(1:numpcs);
-save(sprintf('data/%s/pgHn.mat', current_set), 'PgHn', 'VgHn', 'mngnH');
+save(sprintf('data/%s/pgHn.mat', current_set), 'PgHn', 'VgHn', 'mngHn');
 
 disp 'Clearing workspace...'
 clear PgHn;
 clear VgHn;
-clear mngnH;
+clear mngHn;
 
 disp 'Computing pedestrians edge mean...'
 mneHn = mean(nonhead_edges,2);
@@ -157,7 +157,7 @@ clear mneHn;
 disp 'TORSO'
 
 disp 'Computing pedestrians grayscale mean...'
-mngnT = mean(nontorsos,2);
+mngTn = mean(nontorsos,2);
 
 disp 'Computing pedestrians grayscale PCA...'
 [PgTn,VgTn] = pca(nontorsos);
@@ -165,12 +165,12 @@ disp 'Computing pedestrians grayscale PCA...'
 disp 'Saving pedestrians grayscale PCAs...'
 PgTn = PgTn(:,1:numpcs);
 VgTn = VgTn(1:numpcs);
-save(sprintf('data/%s/pgTn.mat', current_set), 'PgTn', 'VgTn', 'mngnT');
+save(sprintf('data/%s/pgTn.mat', current_set), 'PgTn', 'VgTn', 'mngTn');
 
 disp 'Clearing workspace...'
 clear PgTn;
 clear VgTn;
-clear mngnT;
+clear mngTn;
 
 disp 'Computing pedestrians edge mean...'
 mneTn = mean(nontorso_edges,2);
@@ -193,7 +193,7 @@ clear mneTn;
 disp 'LEGS'
 
 disp 'Computing pedestrians grayscale mean...'
-mngnL = mean(nonlegs,2);
+mngLn = mean(nonlegs,2);
 
 disp 'Computing pedestrians grayscale PCA...'
 [PgLn,VgLn] = pca(nonlegs);
@@ -201,12 +201,12 @@ disp 'Computing pedestrians grayscale PCA...'
 disp 'Saving pedestrians grayscale PCAs...'
 PgLn = PgLn(:,1:numpcs);
 VgLn = VgLn(1:numpcs);
-save(sprintf('data/%s/pgLn.mat', current_set), 'PgLn', 'VgLn', 'mngnL');
+save(sprintf('data/%s/pgLn.mat', current_set), 'PgLn', 'VgLn', 'mngLn');
 
 disp 'Clearing workspace...'
 clear PgLn;
 clear VgLn;
-clear mngnL;
+clear mngLn;
 
 disp 'Computing pedestrians edge mean...'
 mneLn = mean(nonleg_edges,2);
