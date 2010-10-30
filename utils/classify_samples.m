@@ -1,14 +1,12 @@
 % Classify loaded samples, shows results and saves the ROC curve.
 
 load_paths;
+
+clear weights;
 load_pcs;
 
 clear_errors;
 
-%%
-
-clear weights;
-load_pcs;
 calculate_errors;
 
 disp('Classifying test pedestrians with TOTAL error...');

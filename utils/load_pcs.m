@@ -1,44 +1,58 @@
 % Load PCAs and/or change the numbers of PCs accordingly to k
 
-if exist('k','var')
-	if exist('Pgpx') && exist('Pepx') && exist('Pgnx') && exist('Penx')
-		if size(Pgpx,2) >= k || size(Pepx,2) >= k || size(Pgnx,2) >= k || size(Penx,2) >= k
-			should_load = false;
-			Pgpx = Pgpx(:,1:k);
-			Pepx = Pepx(:,1:k);
-			Pgnx = Pgnx(:,1:k);
-			Penx = Penx(:,1:k);
-		else
-			should_load = true;
-		end
-	else
-		should_load = true;
-	end
-else
-	k = 200;
-	should_load = true;
-end
+k = 200;
 
+disp(sprintf('Loading PCs (k = %d)...', k));
 
-if should_load
-	disp(sprintf('Loading PCs (k = %d)...', k));
+load(sprintf('data/%s/pgHp.mat', current_set));
+PgHpx = PgHp(:,1:k);
+clear PgHp VgHp;
 
-	load(sprintf('data/%s/pgp.mat', current_set));
-	Pgpx = Pgp(:,1:k);
-	clear Pgp Vgp;
-	
-	load(sprintf('data/%s/pep.mat', current_set));
-	Pepx = Pep(:,1:k);
-	clear Pep Vep;
-	
-	load(sprintf('data/%s/pgn.mat', current_set));
-	Pgnx = Pgn(:,1:k);
-	clear Pgn Vgn;
-	
-	load(sprintf('data/%s/pen.mat', current_set));
-	Penx = Pen(:,1:k);
-	clear Pen Ven;
-end
+load(sprintf('data/%s/peHp.mat', current_set));
+PeHpx = PeHp(:,1:k);
+clear PeHp VeHp;
+
+load(sprintf('data/%s/pgTp.mat', current_set));
+PgTpx = PgTp(:,1:k);
+clear PgTp VgTp;
+
+load(sprintf('data/%s/peTp.mat', current_set));
+PeTpx = PeTp(:,1:k);
+clear PeTp VeTp;
+
+load(sprintf('data/%s/pgLp.mat', current_set));
+PgLpx = PgLp(:,1:k);
+clear PgLp VgLp;
+
+load(sprintf('data/%s/peLp.mat', current_set));
+PeLpx = PeLp(:,1:k);
+clear PeLp VeLp;
+
+%%
+
+load(sprintf('data/%s/pgHn.mat', current_set));
+PgHnx = PgHn(:,1:k);     
+clear PgHn VgHn;         
+                         
+load(sprintf('data/%s/peHn.mat', current_set));
+PeHnx = PeHn(:,1:k);     
+clear PeHn VeHn;         
+                         
+load(sprintf('data/%s/pgTn.mat', current_set));
+PgTnx = PgTn(:,1:k);     
+clear PgTn VgTn;         
+                         
+load(sprintf('data/%s/peTn.mat', current_set));
+PeTnx = PeTn(:,1:k);     
+clear PeTn VeTn;         
+                         
+load(sprintf('data/%s/pgLn.mat', current_set));
+PgLnx = PgLn(:,1:k);     
+clear PgLn VgLn;         
+                         
+load(sprintf('data/%s/peLn.mat', current_set));
+PeLnx = PeLn(:,1:k);
+clear PeLn VeLn;
 
 if not(exist('weights', 'var'))
 	weights.pgp = 1;
